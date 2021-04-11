@@ -1,86 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import left_004 from './assets/left_004.wav'
-import left_009 from './assets/left_009.wav'
-import left_014 from './assets/left_014.wav'
-import left_016 from './assets/left_016.wav'
-import right_004 from './assets/right_004.wav'
-import right_009 from './assets/right_009.wav'
-import right_014 from './assets/right_014.wav'
-import right_016 from './assets/right_016.wav'
 import Button from "./Button";
 
-const audio = new Audio()
 
-const switcher = (inter) => {
-    switch (inter) {
-        case '0.04':
-            return '004'
-        case '0.09':
-            return '009'
-        case '0.14':
-            return '014'
-        case '0.16':
-            return '016'
-    }
-}
-
-const tracks = {
-    left_004: {
-        track: left_004,
-        direction: 'left'
-    },
-    left_009: {
-        track: left_009,
-        direction: 'left'
-    },
-    left_014: {
-        track: left_014,
-        direction: 'left'
-    },
-    left_016: {
-        track: left_016,
-        direction: 'left'
-    },
-    right_004: {
-        track: right_004,
-        direction: 'right'
-    },
-    right_009: {
-        track: right_009,
-        direction: 'right'
-    },
-    right_014: {
-        track: right_014,
-        direction: 'right'
-    },
-    right_016: {
-        track: right_016,
-        direction: 'right'
-    },
-}
-
-const Choise = ({interval, setStartPage}) => {
+const Choise = ({interval, currentTrack, setStartPage, runTrack, tracks}) => {
     const [isSelected, setIsSelected] = useState(false)
-    const [currentTrack, setCurrentTrack] = useState('');
     const [isCorrectChoise, setIsCorrectChoise] = useState(false)
     const [leftCount, setLeftCount] = useState(0)
     const [rightCount, setRightCount] = useState(0)
     const [leftFullCount, setLeftFullCount] = useState(0);
     const [rightFullCount, setRightFullCount] = useState(0);
 
-    useEffect(() => {
-      runTrack()
-    }, [])
 
-    function runTrack () {
-        const audioDirection = Math.random() < 0.5 ? 'left' : 'right'
-        const src = audioDirection + "_" + switcher(interval)
-        console.log(src)
-        setCurrentTrack(src)
-        audio.src = tracks[src].track
-        audio.load()
-        audio.play()
-    }
 
     const selectLeft = () => {
         setIsSelected(true)

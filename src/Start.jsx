@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from "./Button";
 
-const Start = ({interval, setInterval, setStartPage}) => {
+const Start = ({interval, setInterval, start}) => {
 
 
     function handleOptionChange(e) {
@@ -29,7 +29,7 @@ const Start = ({interval, setInterval, setStartPage}) => {
                     <label htmlFor="016">0.16с</label>
                 </div>
             </div>
-            <Button style={{marginTop: 15}} onClick={() => setStartPage(false)} text="Начать"/>
+            <Button style={{marginTop: 15}} onClick={start} text="Начать"/>
         </div>
     );
 };

@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Consolas;
+    color: white;
+}
+
+body {
+    background: black;
+    padding: 15px;
+}
+.app {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.start {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.start__intervals {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 24px;
+    margin-left: 5px;
+}
+
+
+
+
+.back {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.back:focus {
+    border: none;
+    padding: 10px 20px;
+    outline: none;
+}
+
+.choise__btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.left, .right, .middle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 10px;
+    border: none;
+    color: white;
+    background: teal;
+    cursor: pointer;
+}
+.left:focus, .right:focus, .middle:focus {
+    outline: none;
+}
+.middle {
+    background: brown;
+}
+
+
+
+.btn {
+    outline: none;
+    border: 1px solid white;
+    padding: 7px 15px;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.btn:focus {
+    outline: none;
+}
+
+button:disabled {
+    border: 1px solid gray !important;
+    color: darkgray !important;
+    cursor: not-allowed;
+}
